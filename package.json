@@ -1,0 +1,16 @@
+{
+  "name": "visual-nuts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/typescript": "^2.0.0",
+    "typescript": "^4.8.4",
+    "vitest": "^0.25.1"
+  }
+}
