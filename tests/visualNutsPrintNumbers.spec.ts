@@ -32,3 +32,13 @@ test('should print on console "Visual Nuts" when is divisible for 3 and 5', () =
   expect(spy).toBeCalledTimes(1)
   expect(spy).toBeCalledWith("Visual Nuts")
 })
+
+
+test('should print on console the actual number when is not divisible for 3 or 5', () => {
+  const spy = vi.spyOn(console, 'log');
+
+  visualNutsPrintNumbers(1,2)
+  expect(spy).toBeCalledTimes(1)
+  expect(spy).toBeCalledWith(1)
+})
+

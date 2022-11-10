@@ -20,7 +20,7 @@
   We could have BDD with integration tests to test our api calls
 */
 
-interface ICountryLanguages { 
+export interface ICountryLanguages { 
   country: string,
   languages: string[]
 }
@@ -29,35 +29,11 @@ interface ILangApparition {
   [key: string]: number, 
 }
 
-const countryAndLanguages: ICountryLanguages[] = [
-  {
-    country:"US",
-    languages: ["en"]
-  },
-  {
-    country:"BE",
-    languages: ["nl","fr","de"]
-  },
-  {
-    country:"NL",
-    languages: ["nl"]
-  },
-  {
-    country:"DE",
-    languages: ["de"]
-  },
-  {
-    country:"ES",
-    languages: ["es"]
-  }]
-
-
-
-  export function numberOfCountriesInWorld() { 
+  export function numberOfCountriesInWorld(countryAndLanguages : ICountryLanguages[]) { 
     return countryAndLanguages.length;
   }
 
-  export function findWithMostOfficialLanguagesAndSpeaksDE() { 
+  export function findWithMostOfficialLanguagesAndSpeaksDE(countryAndLanguages : ICountryLanguages[]) { 
     let countryFinded = {
       country: '',
       quantityJOfLangs: 0
@@ -73,7 +49,7 @@ const countryAndLanguages: ICountryLanguages[] = [
     return countryFinded;
   }
 
- export function findWithHighestNumberOfOfficialLanguages() { 
+ export function findWithHighestNumberOfOfficialLanguages(countryAndLanguages : ICountryLanguages[]) { 
     let countryFinded = {
       country: '',
       quantityJOfLangs: 0
@@ -89,7 +65,7 @@ const countryAndLanguages: ICountryLanguages[] = [
     return countryFinded;
   }
 
- export function findMostCommonOfficialLang() { 
+ export function findMostCommonOfficialLang(countryAndLanguages : ICountryLanguages[]) { 
     let langsApparition: ILangApparition = {}
   
     for (const country of countryAndLanguages) { 
@@ -105,7 +81,7 @@ const countryAndLanguages: ICountryLanguages[] = [
     })
   }
 
-export function countAllOfficialLangsSpokenPerCountry() { 
+export function countAllOfficialLangsSpokenPerCountry(countryAndLanguages : ICountryLanguages[]) { 
     return countryAndLanguages.map((item) => {
       return {
         country: item.country,
